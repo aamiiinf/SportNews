@@ -62,16 +62,31 @@
                            </ul>
                            <!-- end social icon -->
                            <!-- button section -->
+
                            <ul class="login">
+                              @auth
                               <li class="login-modal">
-                                 <a href="#" class="login"><i class="fa fa-user"></i>Login</a>
+                                 <a href="#" class="btn btn-default btn-flat float-right"
+                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                 {{ Auth::user()->name }}
+                                 @lang('sign_out')
+                                 </a>
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                     @csrf
+                                 </form>
+                              </li>
+                              @else
+                              <li class="login-modal">
+                                 <a href="{{ route('login') }}" class="login"><i class="fa fa-user"></i>Login</a>
                               </li>
                               <li>
                                  <div class="cart-option">
-                                    <a href="#"><i class="fa fa-shopping-cart"></i>Register</a>
+                                    <a href="{{ route('register') }}"><i class="fa fa-shopping-cart"></i>Register</a>
                                  </div>
                               </li>
+                              @endauth
                            </ul>
+
                            <!-- end button section -->
                         </div>
                      </div>

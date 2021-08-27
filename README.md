@@ -1,13 +1,13 @@
 
 ## Run The Project
 ```bash
-git clone https://github.com/aamiiinf/OnlineShop.git
+git clone https://github.com/aamiiinf/SportNews.git
 
-cd OnlineShop
+cd SportNews
 
 copy .env from .env.example and edit database informations
 
-create database online_shop
+create database SportNews
 
 composer install
 
